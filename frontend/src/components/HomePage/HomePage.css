@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-container {
+  width: 100%;
+  text-align: center;
+}
+
+/* Ваш CSS файл */
+
+#aboutUs {
+  height: 400px;
+  background-color: #0E0E2C;
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: center;
+}
+
+.card {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card-title {
+  border-bottom: 2px solid #cacaca;
+  padding-bottom: 1rem;
+}
+
+.ourWork {
+  margin-top: 60px;
+
+}
+.bgImg {
+  height: 500px;
+  border-radius: 20px 0px 0px 20px;
+}
+.bgText {
+  height: 500px;
+  background-color: #1A1A3D;
+  border-radius: 0px 20px 20px 0px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.33rem;
+}

@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav{
+  background-color: #292533;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
