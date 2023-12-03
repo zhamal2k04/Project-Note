@@ -27,7 +27,7 @@ const yourSchema = new mongoose.Schema({
 const YourModel = mongoose.model('form', yourSchema);
 
 // Обработчик POST запроса для сохранения данных в MongoDB
-app.post('https://project-note-ac6k.onrender.com/api/notes', async (req, res) => {
+app.post('/api/notes', async (req, res) => {
   try {
     const newData = req.body;
     const createdData = await YourModel.create(newData);
@@ -38,7 +38,7 @@ app.post('https://project-note-ac6k.onrender.com/api/notes', async (req, res) =>
 });
 
 // GET запрос для получения данных из MongoDB
-app.get('https://project-note-ac6k.onrender.com/api/notes', async (req, res) => {
+app.get('/api/notes', async (req, res) => {
   try {
     const allData = await YourModel.find();
     res.status(200).json(allData);
