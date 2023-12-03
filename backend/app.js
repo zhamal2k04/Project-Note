@@ -1,15 +1,23 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
+const express = require("express");
+const mongoose = require("mongoose");
+const path = require("path");
 
 const app = express();
 app.use(express.json());
-
-// Подключение к MongoDB
-mongoose.connect("mongodb+srv://zhamal2k04:test12345@cluster0.ek0f7zz.mongodb.net/test?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://zhamal.netlify.app"); // Замените * на ваш источник
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
 });
+// Подключение к MongoDB
+mongoose.connect(
+  "mongodb+srv://zhamal2k04:test12345@cluster0.ek0f7zz.mongodb.net/test?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 // Схема и модель для данных в MongoDB
 const yourSchema = new mongoose.Schema({
@@ -21,13 +29,13 @@ const yourSchema = new mongoose.Schema({
   productionDate: String,
   shippingZone: String,
   fullName1: String,
-  fullName2: String
+  fullName2: String,
 });
 
-const YourModel = mongoose.model('form', yourSchema);
+const YourModel = mongoose.model("form", yourSchema);
 
 // Обработчик POST запроса для сохранения данных в MongoDB
-app.post('/api/notes', async (req, res) => {
+app.post("/api/notes", async (req, res) => {
   try {
     const newData = req.body;
     const createdData = await YourModel.create(newData);
@@ -38,7 +46,7 @@ app.post('/api/notes', async (req, res) => {
 });
 
 // GET запрос для получения данных из MongoDB
-app.get('/api/notes', async (req, res) => {
+app.get("/api/notes", async (req, res) => {
   try {
     const allData = await YourModel.find();
     res.status(200).json(allData);
