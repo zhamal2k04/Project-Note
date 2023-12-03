@@ -19,13 +19,13 @@ const YourFormComponent = () => {
 
     try {
       // Отправка данных на сервер
-      const response = await axios.post('/api/notes', formData); // Предположим, что '/api/notes' - это ваше API endpoint для сохранения данных
+      const response = await axios.post('https://project-note-ac6k.onrender.com/api/notes', formData); // Предположим, что '/api/notes' - это ваше API endpoint для сохранения данных
 
       // Проверка успешности отправки данных
       if (response.status === 200) {
         // Данные успешно отправлены, можно сделать что-то здесь, например, очистить форму или показать сообщение об успехе
         console.log("Данные успешно отправлены!");
-        window.location.replace("http://localhost:3000/table")
+        window.location.replace("zhamal2k04-note.netlify.app/table")
       }
 
     } catch (error) {

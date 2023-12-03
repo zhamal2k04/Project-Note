@@ -7,7 +7,7 @@ const TableComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/api/notes');
+        const response = await axios.get('https://project-note-ac6k.onrender.com/api/notes');
         setTableData(response.data);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);

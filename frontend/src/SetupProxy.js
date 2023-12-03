@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api/notes',
     createProxyMiddleware({
-      target: 'http://localhost:5500', // Укажите URL вашего сервера
+      target: 'https://project-note-ac6k.onrender.com/', // Укажите URL вашего сервера
       changeOrigin: true,
     })
   );
